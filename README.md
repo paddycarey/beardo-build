@@ -12,7 +12,7 @@ Usage
 
 #### Running locally
 
-Presuming that you already have docker installed, running locally should be as simple as checking out the repository `git clone git@github.com:beardo-project/beardo-registry.git` and using the included `Makefile` from the repository root:
+Presuming that you already have docker installed, running locally should be as simple as checking out the repository `git clone git@github.com:beardo-project/beardo-build.git` and using the included `Makefile` from the repository root:
 
 ```bash
 $ make run
