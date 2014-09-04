@@ -1,0 +1,13 @@
+[Unit]
+Description=Beardo build worker
+Requires=docker.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill bw1
+ExecStartPre=-/usr/bin/docker rm bw1
+ExecStart=/usr/bin/docker run -v /home/core/bw1/deploy-key.pem:/root/.ssh/id_rsa -v /home/core/bw1/deploy_known_hosts:/root/.ssh/known_hosts -v /home/core/bw1/deploy.conf:/app.conf --privileged --name bw1 beardo/beardo-build wrapdocker
+
+[Install]
+WantedBy=multi-user.target
